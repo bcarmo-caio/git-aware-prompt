@@ -21,7 +21,7 @@ If you `cd` to a Git working directory, you will see the current Git branch
 name displayed in your terminal prompt. When you're not in a Git working
 directory, your prompt works like normal.
 
-![Git Branch in Prompt](https://raw.github.com/jimeh/git-aware-prompt/master/preview.png)
+![Git Branch in Prompt](https://raw.github.com/bcarmo-caio/git-aware-prompt/master/preview.png)
 
 
 ## Installation
@@ -40,7 +40,6 @@ Edit your `~/.bash_profile` or `~/.profile` or `~/.bashrc` (for Ubuntu) and add 
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 ```
-
 
 ## Configuring
 
@@ -62,7 +61,20 @@ Below are a few suggested prompt configurations. Simply paste the code at the
 end of the same file you pasted the installation code into earlier.
 
 
-#### Mac OS X
+#### Debian (and bla bla bla)
+
+Standard:
+
+```bash
+export PS1="\${debian_chroot:+(\$debian_chroot)}\u@\h:\w\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+```
+
+Colorized:
+
+```bash
+export PS1="\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+```
+#### Mac OS X (nheee)
 
 ```bash
 export PS1="\u@\h \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
@@ -75,22 +87,7 @@ this line:
 export SUDO_PS1="\[$bakred\]\u@\h\[$txtrst\] \w\$ "
 ```
 
-
-#### Ubuntu
-
-Standard:
-
-```bash
-export PS1="\${debian_chroot:+(\$debian_chroot)}\u@\h:\w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
-```
-
-Colorized:
-
-```bash
-export PS1="\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
-```
-
-#### Windows
+#### Windows (@!&!$@&#)
 
 ```bash
 export PS1="\[\033]0;$MSYSTEM:\w\007\033[32m\]\u@\h:\[\033[33m\w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\033[0m\]\$ "

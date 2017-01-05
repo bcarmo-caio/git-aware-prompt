@@ -9,6 +9,10 @@ find_git_branch() {
   else
     git_branch=""
   fi
+
+  if [[ "$git_branch" != "" ]]; then
+	  git_branch=$(echo " $git_branch")
+  fi
 }
 
 find_git_dirty() {
